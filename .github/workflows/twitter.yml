@@ -2,7 +2,7 @@ name: Twitter Lead Scraper
 
 on:
   schedule:
-    - cron: "0 9 * * *"  # rulează zilnic la 9:00 UTC (11:00 RO)
+    - cron: "18 13 * * *"  # rulează zilnic la 9:00 UTC (11:00 RO)
   workflow_dispatch:      # permite și rulare manuală
 
 jobs:
