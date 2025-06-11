@@ -1,0 +1,4 @@
+snscrape
+pandas
+openpyxl
+tqdm
