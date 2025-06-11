@@ -1,0 +1,26 @@
+name: Twitter Lead Scraper
+
+on:
+  schedule:
+    - cron: "0 9 * * *"  # rulează zilnic la 9:00 UTC (11:00 RO)
+  workflow_dispatch:      # permite și rulare manuală
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run script
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: python main.py
